@@ -4,9 +4,12 @@ PImage optionsMenu;
 PImage mainMenuDark;
 PImage infoMenuDark;
 PImage optionsMenuDark;
+PImage mainMenu1;
+PImage infoMenu1;
+PImage optionsMenu1;
 
 String screen = "main";
-String theme = "dark";
+String theme = "light";
 
 boolean registerMPS;
 
@@ -18,6 +21,10 @@ void setup()
   mainMenu = loadImage("mainMenuLightTheme.png");
   infoMenu = loadImage("infoMenuLightTheme.png");
   optionsMenu = loadImage("optionsMenuLightTheme.png");
+  
+  mainMenu1 = loadImage("mainMenuLightTheme.png");
+  infoMenu1 = loadImage("infoMenuLightTheme.png");
+  optionsMenu1 = loadImage("optionsMenuLightTheme.png"); 
   
   mainMenuDark = loadImage("mainMenu.png");
   infoMenuDark = loadImage("infoMenu.png");
@@ -34,6 +41,7 @@ void setup()
   optionsMenuDark.resize (displayWidth, displayHeight);
   
 }
+
 void draw()
 {
   if(screen == "main")
@@ -64,37 +72,12 @@ void draw()
     {
      screen = "options";
     }
-    
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.87 * displayWidth 
-                    && mouseY > displayHeight - 0.80 * displayHeight 
-                    && mouseY < displayHeight - 0.70 * displayHeight)
-    {
-      screen = "registrationMPS";
-    }
-    
-    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.87 * displayWidth 
-                    && mouseY > displayHeight - 0.67 * displayHeight 
-                    && mouseY < displayHeight - 0.59 * displayHeight)
-    {
-      screen = "preRegistrationMPS";
-    }
-    
-    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.87 * displayWidth 
-                    && mouseY > displayHeight - 0.56 * displayHeight 
-                    && mouseY < displayHeight - 0.48 * displayHeight)
-    {
-      screen = "transitPlate";
-    }
-    
-}
+     
+  }
   
   if(screen == "options")
   {
+    
     image(optionsMenu, 0, 0, displayWidth, displayHeight);
     
     if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
@@ -107,50 +90,22 @@ void draw()
      screen = "info";
     }
     
-    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.45 * displayWidth 
-                    && mouseY > displayHeight - 0.50 * displayHeight 
-                    && mouseY < displayHeight - 0.40 * displayHeight)
+    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth && mouseX > displayWidth - 0.45 * displayWidth 
+                    && mouseY > displayHeight - 0.50 * displayHeight && mouseY < displayHeight - 0.40 * displayHeight)
     {
-      
-     theme = "dark";
-     
-     if(theme == "dark")
-     {
-       mainMenu = mainMenuDark;
-       infoMenu = infoMenuDark;
-       optionsMenu = optionsMenuDark;
-     }
-     
+     mainMenu = mainMenuDark;
+     infoMenu = infoMenuDark;
+     optionsMenu = optionsMenuDark;
     }    
     
-    if(mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.45 * displayWidth 
-                    && mouseY > displayHeight - 0.50 * displayHeight 
-                    && mouseY < displayHeight - 0.40 * displayHeight)
+    if(mousePressed && mouseX < displayWidth - 0.53 * displayWidth && mouseX > displayWidth - 0.85 * displayWidth 
+                    && mouseY > displayHeight - 0.50 * displayHeight && mouseY < displayHeight - 0.40 * displayHeight)
     {
-      
+     mainMenu = mainMenu1;
+     infoMenu = infoMenu1;
+     optionsMenu = optionsMenu1;
     }
   
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  if(screen == "registrationMPS")
-  {
-    registerMPS = true;
   }
   
-  }
-}
-
-void mousePressed() 
-{ 
-
-  if(registerMPS == true && mousePressed && mouseX < displayWidth - 0.13 * displayWidth 
-                    && mouseX > displayWidth - 0.87 * displayWidth 
-                    && mouseY > displayHeight - 0.80 * displayHeight 
-                    && mouseY < displayHeight - 0.70 * displayHeight)
-  {
-   link("https://www.mvr.bg/opp/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%81/%D0%B8%D0%B7%D0%B2%D1%8A%D1%80%D1%88%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%8A%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B0-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE"); 
-  }
-
 }
