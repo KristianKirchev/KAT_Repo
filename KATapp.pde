@@ -1,17 +1,25 @@
 PImage mainMenu;
 PImage infoMenu;
 PImage optionsMenu;
+
 PImage mainMenuDark;
 PImage infoMenuDark;
 PImage optionsMenuDark;
+
 PImage mainMenu1;
 PImage infoMenu1;
 PImage optionsMenu1;
 
+
+PImage regMPSLightTheme;
+PImage regMPSLightTheme1;
+PImage regMPSDarkTheme;
+
+
 String screen = "main";
 String theme = "light";
 
-boolean registerMPS;
+boolean regMPSredirect;
 
 void setup()
 {
@@ -29,6 +37,11 @@ void setup()
   mainMenuDark = loadImage("mainMenu.png");
   infoMenuDark = loadImage("infoMenu.png");
   optionsMenuDark = loadImage("optionsMenu.png");
+  
+  regMPSDarkTheme = loadImage("regMPSDarkTheme.png");
+  regMPSLightTheme = loadImage("regMPSLightTheme.png"); 
+  regMPSLightTheme1 = loadImage("regMPSLightTheme.png"); 
+
   
   
   
@@ -72,6 +85,13 @@ void draw()
     {
      screen = "options";
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    if(mousePressed && mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.80 * displayHeight && mouseY < displayHeight - 0.70 * displayHeight)
+    {
+      screen = "registerMPS";
+    }
      
   }
   
@@ -96,6 +116,7 @@ void draw()
      mainMenu = mainMenuDark;
      infoMenu = infoMenuDark;
      optionsMenu = optionsMenuDark;
+     regMPSLightTheme = regMPSDarkTheme;
     }    
     
     if(mousePressed && mouseX < displayWidth - 0.53 * displayWidth && mouseX > displayWidth - 0.85 * displayWidth 
@@ -104,8 +125,45 @@ void draw()
      mainMenu = mainMenu1;
      infoMenu = infoMenu1;
      optionsMenu = optionsMenu1;
+     regMPSLightTheme = regMPSLightTheme1;
     }
   
   }
   
+  if(screen == "registerMPS")
+  {
+   image(regMPSLightTheme, 0, 0, displayWidth, displayHeight);
+   
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    }    
+    
+    if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "info";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "options";
+    }
+   
+   if(mousePressed && mouseX > displayWidth - 0.50 * displayWidth && mouseY > displayHeight - 0.10 * displayHeight)
+   {
+     regMPSredirect = true;
+   }
+   
+  }
+  
+}
+
+void mousePressed()
+{
+  
+ if(regMPSredirect)
+ {
+   link("https://www.mvr.bg/opp/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%81/%D0%B8%D0%B7%D0%B2%D1%8A%D1%80%D1%88%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%8A%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B0-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE");
+ }
+ 
 }
