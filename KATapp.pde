@@ -23,6 +23,10 @@ PImage transRegLightTheme;
 PImage transRegLightTheme1;
 PImage transRegDarkTheme;
 
+PImage mainMenuOpenedDark;
+PImage mainMenuOpenedLight;
+PImage mainMenuOpenedLight1;
+
 
 String screen = "main";
 String theme = "light";
@@ -37,6 +41,10 @@ void setup()
   mainMenu = loadImage("mainMenuLightTheme.png");
   infoMenu = loadImage("infoMenuLightTheme.png");
   optionsMenu = loadImage("optionsMenuLightTheme.png");
+  
+  mainMenuOpenedDark = loadImage("mainMenuOpenedDarkTheme.png");
+  mainMenuOpenedLight = loadImage("mainMenuOpenedLightTheme.png");
+  mainMenuOpenedLight1 = loadImage("mainMenuOpenedLightTheme.png");
   
   mainMenu1 = loadImage("mainMenuLightTheme.png");
   infoMenu1 = loadImage("infoMenuLightTheme.png");
@@ -62,8 +70,15 @@ void setup()
   
   
   mainMenu.resize (displayWidth, displayHeight); 
+  mainMenu1.resize (displayWidth, displayHeight);
   infoMenu.resize (displayWidth, displayHeight);
+  infoMenu1.resize (displayWidth, displayHeight);
   optionsMenu.resize (displayWidth, displayHeight);
+  optionsMenu1.resize (displayWidth, displayHeight);
+  
+  mainMenuOpenedDark.resize (displayWidth, displayHeight);
+  mainMenuOpenedLight.resize (displayWidth, displayHeight);
+  mainMenuOpenedLight1.resize (displayWidth, displayHeight);
   
   mainMenuDark.resize (displayWidth, displayHeight); 
   infoMenuDark.resize (displayWidth, displayHeight);
@@ -98,6 +113,27 @@ void draw()
     {
      screen = "options";
     }
+    
+    if(mousePressed && mouseX > displayWidth - 0.85 * displayWidth && mouseX < displayWidth - 0.15 * displayWidth && mouseY < displayHeight - 0.45 * displayHeight && mouseY > displayHeight - 0.60 * displayHeight)
+    {
+     screen = "mainOpened";
+    }
+  }
+  
+  if(screen == "mainOpened")
+  {
+    image(mainMenuOpenedLight, 0, 0, displayWidth, displayHeight);
+  
+    if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "info";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "options";
+    }
+   
   }
   
   if(screen == "info")
@@ -157,7 +193,7 @@ void draw()
      regMPSLightTheme = regMPSDarkTheme;
      preRegLightTheme = preRegDarkTheme;
      transRegLightTheme = transRegDarkTheme;
-     
+     mainMenuOpenedLight = mainMenuOpenedDark;
     }    
     
     if(mousePressed && mouseX < displayWidth - 0.53 * displayWidth && mouseX > displayWidth - 0.85 * displayWidth 
@@ -169,7 +205,7 @@ void draw()
      regMPSLightTheme = regMPSLightTheme1;
      preRegLightTheme = preRegLightTheme1;
      transRegLightTheme = transRegLightTheme1;
-     
+     mainMenuOpenedLight = mainMenuOpenedLight1;
     }
   
   }
