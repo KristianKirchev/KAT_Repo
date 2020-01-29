@@ -38,9 +38,9 @@ void setup()
   infoMenu1 = loadImage("infoMenuLightTheme.png");
   optionsMenu1 = loadImage("optionsMenuLightTheme.png"); 
   
-  mainMenuDark = loadImage("mainMenu.png");
-  infoMenuDark = loadImage("infoMenu.png");
-  optionsMenuDark = loadImage("optionsMenu.png");
+  mainMenuDark = loadImage("mainMenuDarkTheme.png");
+  infoMenuDark = loadImage("infoMenuDarkTheme.png");
+  optionsMenuDark = loadImage("optionsMenuDarkTheme.png");
   
   regMPSDarkTheme = loadImage("regMPSDarkTheme.png");
   regMPSLightTheme = loadImage("regMPSLightTheme.png"); 
