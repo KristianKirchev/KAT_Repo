@@ -15,6 +15,10 @@ PImage regMPSLightTheme;
 PImage regMPSLightTheme1;
 PImage regMPSDarkTheme;
 
+PImage preRegLightTheme;
+PImage preRegLightTheme1;
+PImage preRegDarkTheme;
+
 
 String screen = "main";
 String theme = "light";
@@ -41,6 +45,10 @@ void setup()
   regMPSDarkTheme = loadImage("regMPSDarkTheme.png");
   regMPSLightTheme = loadImage("regMPSLightTheme.png"); 
   regMPSLightTheme1 = loadImage("regMPSLightTheme.png"); 
+  
+  preRegDarkTheme = loadImage("preRegDarkTheme.png");
+  preRegLightTheme = loadImage("preRegLightTheme.png"); 
+  preRegLightTheme1 = loadImage("preRegLightTheme.png"); 
 
   
   
@@ -95,8 +103,7 @@ void draw()
     
     if(mousePressed && mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.67 * displayHeight && mouseY < displayHeight - 0.59 * displayHeight)
     {
-      //screen = "registerMPS";
-      background(0);
+      screen = "PreRegisterMPS";
     }
     
     if(mousePressed && mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.57 * displayHeight && mouseY < displayHeight - 0.47 * displayHeight)
@@ -161,11 +168,6 @@ void draw()
     screen = "options";
    }
    
-   if(mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.80 * displayHeight && mouseY < displayHeight - 0.70 * displayHeight)
-   {
-     screen = "info";
-   } 
-   
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    if(mousePressed && mouseX > displayWidth - 0.50 * displayWidth && mouseY > displayHeight - 0.10 * displayHeight)
@@ -173,6 +175,31 @@ void draw()
      link("https://www.mvr.bg/opp/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%81/%D0%B8%D0%B7%D0%B2%D1%8A%D1%80%D1%88%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%8A%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B0-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE");
    }
       
+  }
+  
+  if(screen == "PreRegisterMPS")
+  {
+   image(preRegLightTheme, 0, 0, displayWidth, displayHeight);
+   
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    }    
+    
+   if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+   {
+    screen = "info";
+   }
+    
+   if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+   {
+    screen = "options";
+   }
+   if(mousePressed && mouseX > displayWidth - 0.50 * displayWidth && mouseY > displayHeight - 0.10 * displayHeight)
+   {
+    link("https://www.mvr.bg/opp/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%81/%D0%BF%D1%80%D0%BE%D0%BC%D1%8F%D0%BD%D0%B0-%D0%B2-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE");
+   }   
+  
   }
   
 }
