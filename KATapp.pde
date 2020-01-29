@@ -92,6 +92,18 @@ void draw()
     {
       screen = "registerMPS";
     }
+    
+    if(mousePressed && mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.67 * displayHeight && mouseY < displayHeight - 0.59 * displayHeight)
+    {
+      //screen = "registerMPS";
+      background(0);
+    }
+    
+    if(mousePressed && mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.57 * displayHeight && mouseY < displayHeight - 0.47 * displayHeight)
+    {
+      //screen = "registerMPS";
+      background(0);
+    }
      
   }
   
@@ -149,11 +161,18 @@ void draw()
     screen = "options";
    }
    
+   if(mouseX > displayWidth - 0.90 * displayWidth && mouseX < displayWidth - 0.10 * displayWidth && mouseY > displayHeight - 0.80 * displayHeight && mouseY < displayHeight - 0.70 * displayHeight)
+   {
+     screen = "info";
+   } 
+   
+   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   
    if(mousePressed && mouseX > displayWidth - 0.50 * displayWidth && mouseY > displayHeight - 0.10 * displayHeight)
    {
      link("https://www.mvr.bg/opp/%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8/%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-%D0%BF%D0%BE-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%81/%D0%B8%D0%B7%D0%B2%D1%8A%D1%80%D1%88%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%8A%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BD%D0%B0-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B7%D0%BD%D0%BE-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE");
    }
-   
+      
   }
   
 }
