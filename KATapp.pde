@@ -9,8 +9,7 @@ PImage optionsMenuDark;
 PImage mainMenu1;
 PImage infoMenu1;
 PImage optionsMenu1;
-
-
+ 
 PImage regMPSLightTheme;
 PImage regMPSLightTheme1;
 PImage regMPSDarkTheme;
@@ -30,8 +29,6 @@ PImage mainMenuOpenedLight1;
 
 String screen = "main";
 String theme = "light";
-
-boolean regMPSredirect;
 
 void setup()
 {
@@ -133,6 +130,11 @@ void draw()
     {
      screen = "options";
     }
+    
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    } 
    
   }
   
