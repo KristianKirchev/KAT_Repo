@@ -26,6 +26,17 @@ PImage mainMenuOpenedDark;
 PImage mainMenuOpenedLight;
 PImage mainMenuOpenedLight1;
 
+PImage mainMenuRegMPSLight;
+PImage mainMenuRegMPSDark;
+PImage mainMenuRegMPSLight1;
+
+PImage mainMenuPreRegMPSLight;
+PImage mainMenuPreRegMPSDark;
+PImage mainMenuPreRegMPSLight1;
+
+PImage mainMenuTransNomLight;
+PImage mainMenuTransNomDark;
+PImage mainMenuTransNomLight1;
 
 String screen = "main";
 String theme = "light";
@@ -62,8 +73,18 @@ void setup()
   transRegDarkTheme = loadImage("transRegDarkTheme.png");
   transRegLightTheme = loadImage("transRegLightTheme.png"); 
   transRegLightTheme1 = loadImage("transRegLightTheme.png"); 
-
   
+  mainMenuRegMPSLight = loadImage("mainMenuRegMPSLightTheme.png");;
+  mainMenuRegMPSDark = loadImage("mainMenuRegMPSDarkTheme.png");;
+  mainMenuRegMPSLight1 = loadImage("mainMenuRegMPSLightTheme.png");;
+
+  mainMenuPreRegMPSLight = loadImage("mainMenuPreRegMPSLightTheme.png"); ;
+  mainMenuPreRegMPSDark = loadImage("mainMenuPreRegMPSDarkTheme.png"); ;
+  mainMenuPreRegMPSLight1 = loadImage("mainMenuPreRegMPSLightTheme.png"); ;
+
+  mainMenuTransNomLight = loadImage("mainMenuTransNomLightTheme.png"); ;
+  mainMenuTransNomDark = loadImage("mainMenuTransNomDarkTheme.png"); ;
+  mainMenuTransNomLight1 = loadImage("mainMenuTransNomLightTheme.png"); ;
   
   
   mainMenu.resize (displayWidth, displayHeight); 
@@ -93,6 +114,17 @@ void setup()
   transRegLightTheme.resize (displayWidth, displayHeight);
   transRegLightTheme1.resize (displayWidth, displayHeight);
   
+  mainMenuRegMPSLight.resize (displayWidth, displayHeight);
+  mainMenuRegMPSDark.resize (displayWidth, displayHeight);
+  mainMenuRegMPSLight1.resize (displayWidth, displayHeight);
+
+  mainMenuPreRegMPSLight.resize (displayWidth, displayHeight);
+  mainMenuPreRegMPSDark.resize (displayWidth, displayHeight);
+  mainMenuPreRegMPSLight1.resize (displayWidth, displayHeight);
+
+  mainMenuTransNomLight.resize (displayWidth, displayHeight);
+  mainMenuTransNomDark.resize (displayWidth, displayHeight);
+  mainMenuTransNomLight1.resize (displayWidth, displayHeight);
 }
 
 void draw()
@@ -115,6 +147,7 @@ void draw()
     {
      screen = "mainOpened";
     }
+    
   }
   
   if(screen == "mainOpened")
@@ -135,7 +168,84 @@ void draw()
     {
      screen = "main";
     } 
+    
+    if(mousePressed && mouseX > displayWidth - 0.85 * displayWidth && mouseX < displayWidth - 0.15 * displayWidth && mouseY < displayHeight - 0.37 * displayHeight && mouseY > displayHeight - 0.45 * displayHeight)
+    {
+     screen = "mainMenuRegMPSLight";
+    } 
    
+    if(mousePressed && mouseX > displayWidth - 0.85 * displayWidth && mouseX < displayWidth - 0.15 * displayWidth && mouseY < displayHeight - 0.27 * displayHeight && mouseY > displayHeight - 0.35 * displayHeight)
+    {
+     screen = "mainMenuPreRegMPSLight";
+    } 
+    
+    if(mousePressed && mouseX > displayWidth - 0.85 * displayWidth && mouseX < displayWidth - 0.15 * displayWidth && mouseY < displayHeight - 0.17 * displayHeight && mouseY > displayHeight - 0.25 * displayHeight)
+    {
+     screen = "mainMenuTransNomLight";
+    } 
+  }
+  
+  if(screen == "mainMenuRegMPSLight")
+  {
+    image(mainMenuRegMPSLight, 0, 0, displayWidth, displayHeight);
+    
+    if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "info";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "options";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    } 
+     
+  }
+  
+  if(screen == "mainMenuPreRegMPSLight")
+  {
+    image(mainMenuPreRegMPSLight, 0, 0, displayWidth, displayHeight);
+    
+    if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "info";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "options";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    } 
+     
+  }
+  
+  if(screen == "mainMenuTransNomLight")
+  {
+    image(mainMenuTransNomLight, 0, 0, displayWidth, displayHeight);
+    
+    if(mousePressed && mouseX < displayWidth - 0.75 * displayWidth && mouseX > displayWidth - 0.95 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "info";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.05 * displayWidth && mouseX > displayWidth - 0.25 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "options";
+    }
+    
+    if(mousePressed && mouseX < displayWidth - 0.40 * displayWidth && mouseX > displayWidth - 0.60 * displayWidth && mouseY < displayHeight - 0.90 * displayHeight)
+    {
+     screen = "main";
+    } 
+     
   }
   
   if(screen == "info")
@@ -196,6 +306,9 @@ void draw()
      preRegLightTheme = preRegDarkTheme;
      transRegLightTheme = transRegDarkTheme;
      mainMenuOpenedLight = mainMenuOpenedDark;
+     mainMenuRegMPSLight = mainMenuRegMPSDark;
+     mainMenuPreRegMPSLight = mainMenuPreRegMPSDark;
+     mainMenuTransNomLight = mainMenuTransNomDark;
     }    
     
     if(mousePressed && mouseX < displayWidth - 0.53 * displayWidth && mouseX > displayWidth - 0.85 * displayWidth 
@@ -208,6 +321,9 @@ void draw()
      preRegLightTheme = preRegLightTheme1;
      transRegLightTheme = transRegLightTheme1;
      mainMenuOpenedLight = mainMenuOpenedLight1;
+     mainMenuRegMPSDark = mainMenuRegMPSLight1;
+     mainMenuPreRegMPSDark = mainMenuPreRegMPSLight1;
+     mainMenuTransNomDark = mainMenuTransNomLight1;
     }
   
   }
